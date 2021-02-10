@@ -1,5 +1,5 @@
-:product: ProductName
-:producta: PN
+:product: {sle} Micro
+:producta: SLE Micro
 :this-version: 1.0
 
 

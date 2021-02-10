@@ -1,0 +1,377 @@
+== SUSE Linux Enterprise Micro 1.0 (SLE Micro 1.0) Release Notes
+
+This repository contains release notes for SUSE Linux Enterprise Micro 1.0.
+
+== Repository Structure and Source Format
+
+This repository should hold a dedicated branch for each SLE Micro version.
+// For example, the release notes for SLES 15 SP3 are in the branch `15_SP3`.
+There should intentionally be no `master` branch, please do not add use it after creating the initial version branch.
+
+.Avoid Forks
+[IMPORTANT]
+====
+When editing the release notes, please avoid forking the repository (as this makes it harder for the documentation team to review and edit your input).
+If you do not have write access to the repository, please ask Frank Sundermeyer <fs@suse.com> or Stefan Knorr <sknorr@suse.com> for it.
+====
+
+The source format for these release notes is *AsciiDoc* (AsciiDoctor flavor).
+
+For syntax help, see the following resources:
+
+* https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc Writer’s Guide (for Beginners)]
+* https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual (Reference Guide)]
+* https://github.com/SUSE/doc-susemanager/wiki/markup-syntax[AsciiDoc Markup and Syntax Guide by the SUSE Manager team]
+* https://github.com/openSUSE/daps/blob/develop/test/documents/adoc/part_block.adoc[Examples for Complex Nested Structures (Lists, Tables)]
+
+== Responsibilities
+
+* Content: With SLE products, the project managers and release managers are responsible for the _content_ of the release notes.
+* Polishing & Publishing: The documentation team is responsible for language proofreading, final formatting and publishing of the release notes.
+
+== Providing Input
+
+If possible, please contribute directly to this repository by editing the `*.adoc` files and creating merge requests.
+If you edit the `*.adoc` file directly in the browser, the built-in _Preview_ tab shows you a rendered version of the file.
+
+Your writing and markup etc. does not need to be perfect, _content_ is what matters most.
+Merge requests will be reviewed by the documentation team who will fine-tune language, style, and formatting.
+
+[NOTE]
+====
+If you do not want to use GitLab and AsciiDoc, send your input to Lukas Kucharczyk <lukas.kucharczyk@suse.com>.
+Make sure your submissions meet the following requirements:
+
+* provide your input in a single document
+* in case you update a document you submitted previously, make the changes to the previous version visible (diff, color, ...)
+====
+
+== Editing a Note in GitLab (Web UI)
+
+. In the GitLab Web interface, select the branch for the product version that you want to work on.
+For example, to work on the releases notes for SLES Micro 1.0, select https://gitlab.suse.de/documentation/release-notes-sles/tree/1_0[SLE Micro 1.0 branch].
+// . To see the file(s) you are responsible for, scroll down to https://gitlab.suse.de/documentation/release-notes-sles/tree/15_SP3#user-content-responsibilities[Responsibilities]. +
+. To open the required AsciiDoc file, click the file name in the table.
+. In the title bar of the file, click *Edit*.
+. Make your changes or additions.
+Use the *Preview* tab to see a rendered version of your changes.
+You can change between *Write* and *Preview* view at any time.
+. When you have finished editing, provide a meaningful *Commit Message*.
+To help us build meaningful change logs, always include the Bugzilla ID or Jira Epic ID at the end of the commit message.
+An example for a good commit message is __Add note about OpenID in MyApp (jsc#SLE-111)__.
+
+== Creating a Merge Request in GitLab (Web UI)
+
+After you have provided the commit message, you can either _directly_ create a merge request or choose to do so _later_.
+In the latter case, GitLab will only create a custom branch and push your changes there.
+From the custom branch, you can continue your work at any time and submit a merge request when you have completed your work.
+
+Whether you are creating the merge request now or later, in the next step, enter a custom name for *Target Branch*.
+To make it easy to identify branches later, use the following branch naming scheme: `<LOGIN>-<SUBJECT>-<RELEASE_BRANCH>`.
+For example, a branch related to a change in the tool MyApp in SLE Micro 1.0 by Frank Sundermeyer could be named `fsundermeyer-myapp-1_0`.
+
+[IMPORTANT]
+====
+If you use a variation of the above branch naming scheme, do _not_ put the name of the release branch at the beginning, because the branch may then automatically be protected and we will not be able to force-push or easily delete it after use!
+====
+
+. If you do _not_ want to create a merge request now:
+.. _Disable_ the checkbox *Start a new merge request with these changes*.
+.. In *Target Branch*, specify the branch you want to create according the naming scheme mentioned above.
+.. Click *Commit changes*.
+GitLab creates the target branch you specified and pushes your changes to this branch.
+
+. If you want to create a merge request now:
+.. In *Target Branch*, specify the branch you want to create according the naming scheme mentioned above.
+.. Make sure the checkbox *Start a new merge request with these changes* is enabled (this is the default).
+.. Click *Commit changes*.
+GitLab creates the target branch you specified and pushes your changes to this branch.
+In addition, it creates a merge request (to be reviewed by the documentation team).
+
+
+[NOTE]
+====
+Create your merge requests in time for each milestone release (beta, RC, GMC, GM).
+This way, your changes can be reviewed, merged, and published for the respective release.
+====
+
+
+== Types of Notes
+
+There are generally three types of notes in this document:
+
+* __Titled notes__ consist of a title and body text and are the most common type of note (further explained in the section below)
+* __Collection notes__ consist of a title and individual list items that each represent an independent, minor change
+* __Support tables/lists__ consist of a title and either a table or list presenting supported hardware, software, or features
+
+
+== Ordering Notes Within a Release Notes File (Category)
+
+When adding a new note within the respective file for a category, follow these rules:
+
+* Support tables/lists are often long and do not change much between subsequent releases.
+  Place them at the bottom of their respective category.
+* Minor changes that do not individually warrant a titled note can be collected into a single collection note with an unordered list in it.
+  Place this note above tables but otherwise at the bottom of the category.
+* When adding a titled note __before the release__ of the documented product version:
+  Place the note by relevance within its category.
+  The most important note should be listed first.
+  Place notes concerning feature additions before those concerning feature changes and feature removals.
+* When adding a titled note __after the release__ of the documented product version, place new notes at the top of the document.
+  This allows repeat readers see new notes first within their category.
+
+
+== Writing and Structuring a Titled Note
+
+* Use the following structure for each titled note:
+** Section ID referencing Bugzilla or Jira Epic number (in cases where note consists only of a list item or a single paragraph, use a comment).
+Section IDs must be unique within the entire document.
+If the same issue must be documented multiple times, append `-1`, `-2`, ... to the IDs of the additional notes.
+** Title.
+Use a descriptive title that highlights the primary change.
+Avoid non-descriptive titles like __Changes in MyApp__, instead use, for example __Support for OpenID in MyApp__.
+If a package was updated, it often makes sense to include the version number of the new package.
+** Issue description (optional).
+If your note is related to an issue or frequent customer request for past product version or a pitfall of this product version, include a paragraph to describe it.
+** Solution/new feature description.
+Describe the new feature or issue resolution.
+Be precise, focus on user-facing changes, and mention exact version numbers where helpful.
+Avoid talking about code rewrites and other developer-facing changes, unless they impact users.
+
++
+--
+An AsciiDoc release note template according to this scheme:
+
+[source]
+----
+[#jsc-SLE-111]
+==== Example Entry
+
+Issue (regular paragraph)
+
+Solution/new feature (regular paragraph)
+----
+
+Find practical examples of varying complexity in <<rn_examples>>.
+--
+
+* Write a few sentences for each entry.
+Use full sentences.
+There is no strict limit regarding the overall number of sentences/words in a note, but keep it concise.
+In some cases, it may be better to only provide a link for full instructions.
+
+* If you know another information source easily be accessed by customers already includes required information, refer to those sources for more details.
+For example, you can refer to the product documentation or a technical information document [TID] in the support knowledgebase at https://www.suse.com/support/kb/.
++
+When referring to SUSE product documentation, use the `doc-url` and `doc-url-beta` attributes.
+
+* Think of your audience. Not all customers/readers are native speakers of English.
+Keep it simple and explain abbreviations if they are not commonly known.
+
+* Within your `*.adoc` file, structure your text according to the individual Jira issues or bugs that you want to cover.
+You can subsume related bugs/Jira issues/topics in one entry when it make sense.
+
+* To ensure consistent spelling and avoid improper shortening of common terms, we use _attributes_ in AsciiDoc.
+These include product names, names for manuals in the product documentation, commonly used URLs.
+These attributes are defined in the files link:adoc/entities_all.adoc[entities_all.adoc] (general variables) and link:adoc/entities15.adoc[entities12.adoc] (SLE 15-specific variables).
+To use an attribute within your text, write `{<VARNAME>}`, for example: {sles}.
+This will be displayed as _SUSE Linux Enterprise Server_ in the output format of the release notes.
+
+* SUSE has a Documentation Style Guide at https://documentation.suse.com/style.
+You are not expected to read it but the documentation team may make changes to your notes based on its rules.
+
+
+== Previewing the Output Document
+
+When editing an `*.adoc` file, GitLab's integrated editor lets you switch between source text and a preview where you can view a rendered version of your document in real time.
+The default view of an AsciiDoc file in GitLab is also the rendered preview.
+To see the preview for the complete release notes, see link:adoc/release-notes.adoc[release-notes.adoc].
+
+You can also use the daily builds of the release notes at http://docserv.nue.suse.com/release-notes/ (internal, only available within the VPN).
+
+Usually, you do not need to build the release notes, as the previews in GitLab are sufficient and the build and packaging process is performed by the documentation team.
+However, if you still want to see the complete release notes (in the same layout as they are published to the outside world):
+
+. Install the documentation environment with the following command:
++
+[source]
+----
+sudo OneClickInstallUI https://gitlab.nue.suse.com/susedoc/doc-ymp/raw/master/Documentation.ymp
+----
+. Open a shell and change to your local checkout of the release notes repository.
+. Switch to the branch from which you want to build the output format.
+
+. Depending on the format you want to build, run `make pdf` or `make single-html`. This will set some variables and start the build process by running daps in the background.
+. Alternatively, call DAPS directly to create PDF or HTML output by running `daps -d DC-release-notes pdf` or `daps -d DC-release-notes html --single`.
+
+
+== Creating a Branch for a New Product Version
+
+A branch for a new product version is usually created by the documentation team at the start of a release cycle for a major product version or a service pack.
+This branch will generally be based on the branch for the immediate previous product version, with irrelevant notes removed.
+
+
+== Meaning of `!STICKY` Comments
+
+Comments with the word `!STICKY` in them are placed above notes that most likely need to be repeated in the release notes for future versions of SLES.
+They are not used in files that consist of mostly boilerplate/repeating content but only before technical notes.
+
+
+[#rn_examples]
+== Example Notes
+
+[cols="20a,50a,30a"]
+|===
+|
+|*AsciiDoc Source*
+|*HTML Output*
+
+^|*Single Paragraph*
+|[source]
+----
+[#jsc-SLE-3038]
+====  Running XenStore in stubdom
+
+Since XEN 4.9 it is rather easy
+to configure XenStore to run in
+a stubdom instead of dom0. This
+has the advantage of a high dom0
+load no longer affecting the
+XenStore performance. This is
+also one of the prerequisites for
+being able to restart dom0 without
+having to restart other guests.
+----
+^|
+====  Running XenStore in stubdom
+
+Since XEN 4.9 it is rather easy to configure XenStore to run in a stubdom instead of dom0.
+This has the advantage of a high dom0 load no longer affecting the XenStore performance.
+This is also one of the prerequisites for being able to restart dom0 without having to restart other guests.
+
+^|*Challenge/Solution*
+|
+[source]
+----
+[#jsc-SLE-3069]
+==== QED Image Format No Longer Supported
+
+The QEMU virtual disk image format
+is no longer supported.
+
+Existing virtual disks using this
+format can still be accessed, but
+should be converted to a RAW or
+QCOW2 format when possible. Using
+the QED format for new disks is
+not supported.
+----
+^|
+==== QED Image Format No Longer Supported
+
+The QEMU virtual disk image format is no longer supported.
+
+Existing virtual disks using this format can still be accessed, but should be converted
+to a RAW or QCOW2 format when possible. Using the QED format for new disks is not supported.
+
+|*Complex*
+|
+[source]
+-----
+[#fate-326567]
+==== Product Registration Changes for the HPC Product
+
+[TIP]
+====
+This entry has appeared in a previous
+release notes document.
+====
+
+For SUSE Linux Enterprise 15, there
+was a High Performance Computing
+subscription named "SUSE Linux
+Enterprise Server for HPC" (SLES
+for HPC). With SLE 15, this
+subscription does not exist anymore
+and has been replaced. To properly
+upgrade a SLES for HPC system to a
+SLE-HPC, the system needs to be
+converted to SLE-HPC first. SUSE
+provides a tool to simplify this
+conversion by performing the
+product conversion and switch to
+the SLE-HPC subscription.
+
+* When run without extra parameters,
+the script assumes that the SLES
+for HPC subscription is valid and
+not expired.
+* If the subscription has expired,
+you need to provide a valid
+registration key for SLE-HPC.
+
+.Providing a Registration Key
+[IMPORTANT]
+The script cannot restore the previous
+registration state if the supplied
+registration key is incorrect or
+invalid.
+
+. To install the script, run
+`zypper in switch_sles_sle-hpc`.
+. Execute the script from the command
+line as root:
+[source,shell]
+----
+switch_sles_sle-hpc \
+-e <REGISTRATION_EMAIL> \
+-r <NEW_REGISTRATION_KEY>
+----
+
+The parameters `-e` and `-r` are only
+required if the previous registration
+has expired, otherwise they are
+optional. To run the script in batch
+mode, add the option `-y`. It answers
+all questions with _yes_.
+
+For more information, see the man
+page `switch_sles_sle-hpc(8)`
+and `README.SUSE.`
+-----
+|
+==== Product Registration Changes for the HPC Product
+
+[TIP]
+====
+This entry has appeared in a previous release
+notes document.
+====
+
+For SUSE Linux Enterprise 12, there was a High Performance Computing subscription named "SUSE Linux Enterprise Server for HPC" (SLES for HPC).
+With SLE 15, this subscription does not exist anymore and has been replaced.
+To properly upgrade a SLES for HPC system to a SLE-HPC, the system needs to be converted to SLE-HPC first.
+SUSE provides a tool to simplify this conversion by performing the product conversion and switch to the SLE-HPC subscription.
+
+* When run without extra parameters, the script assumes that the SLES for HPC subscription is valid and not expired.
+* If the subscription has expired, you need to provide a valid registration key for SLE-HPC.
+
+.Providing a Registration Key to the Conversion Script
+[IMPORTANT]
+The script cannot restore the previous registration state if the supplied registration key is incorrect or invalid.
+
+. To install the script, run `zypper in switch_sles_sle-hpc`.
+. Execute the script from the command line as root:
+[source,shell]
+----
+switch_sles_sle-hpc -e <REGISTRATION_EMAIL> \
+-r <NEW_REGISTRATION_KEY>
+----
++
+The parameters `-e` and `-r` are only required if the previous registration has expired, otherwise they are optional.
+To run the script in batch mode, add the option `-y`.
+It answers all questions with _yes_.
+
+For more information, see the man page `switch_sles_sle-hpc(8)` and `README.SUSE.`
+|===
+
