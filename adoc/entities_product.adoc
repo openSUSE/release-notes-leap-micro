@@ -1,0 +1,7 @@
+:product: ProductName
+:producta: PN
+:this-version: 1.0
+
+
+:doc-url: https://documentation.suse.com/slemicro/1
+:doc-url-beta: https://susedoc.github.io/doc-sle/master
