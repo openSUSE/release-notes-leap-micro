@@ -12,7 +12,7 @@ There should intentionally be no `master` branch, please do not add use it after
 [IMPORTANT]
 ====
 When editing the release notes, please avoid forking the repository (as this makes it harder for the documentation team to review and edit your input).
-If you do not have write access to the repository, please ask Frank Sundermeyer <fs@suse.com> or Stefan Knorr <sknorr@suse.com> for it.
+If you do not have write access to the repository, please ask Lukas Kucharczyk <lukas.kucharczyk@suse.com> for it.
 ====
 
 The source format for these release notes is *AsciiDoc* (AsciiDoctor flavor).
