@@ -1,6 +1,6 @@
-== SUSE Linux Enterprise Micro 1.0 (SLE Micro 1.0) Release Notes
+== SUSE Linux Enterprise Micro 5.0 (SLE Micro 5.0) Release Notes
 
-This repository contains release notes for SUSE Linux Enterprise Micro 1.0.
+This repository contains release notes for SUSE Linux Enterprise Micro 5.0.
 
 == Repository Structure and Source Format
 

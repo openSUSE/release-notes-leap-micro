@@ -17,6 +17,9 @@ include::about-rn.adoc[]
 
 Information in this section applies to all architectures supported by {product} {this-version}.
 
+include::installation.adoc[]
+
+
 // END ARCH INDEPENDENT
 
 // ===================================================================

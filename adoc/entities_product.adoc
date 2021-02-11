@@ -1,7 +1,7 @@
 :product: {sle} Micro
 :producta: SLE Micro
-:this-version: 1.0
+:this-version: 5.0
 
 
-:doc-url: https://documentation.suse.com/slemicro/1
+:doc-url: https://documentation.suse.com/sle-micro/5.0
 :doc-url-beta: https://susedoc.github.io/doc-sle/master

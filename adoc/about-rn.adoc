@@ -14,5 +14,5 @@ Certain important entries from the release notes of previous product versions ar
 To make these entries easier to identify, they contain a note to that effect.
 
 However, repeated entries are provided as a courtesy only.
-Therefore, if you are skipping one or more service packs, check the release notes of the skipped service packs as well.
+Therefore, if you are skipping one or more releases, check the release notes of the skipped releases as well.
 If you are only reading the release notes of the current release, you could miss important changes.

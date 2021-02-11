@@ -4,8 +4,8 @@ include::entities_product.adoc[]
 
 [abstract]
 --
-{product} is a modern, modular operating system for both multimodal and traditional IT.
-This document provides a high-level overview of features, capabilities, and limitations of {product} {this-version} and highlights important product updates.
+{product} is a modern operating system primarily targeted for edge computing.
+This document provides a high-level overview of features, capabilities, and limitations of {product} {this-version}.
 
 // disclaimer beta
 ifeval::["{lifecycle}" == "beta"]

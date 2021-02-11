@@ -1,0 +1,90 @@
+
+include::entities_all.adoc[]
+include::entities_product.adoc[]
+
+[#installation]
+== Installing {product}
+
+{product} {this-version} can be installed in the following ways:
+
+* manual installation with YaST
+* unattended installation with AutoYaST
+* unattended installation with Yomi (technology preview)
+* deployment of pre-built images
+
+Below find notes to individual approaches.
+
+=== Manual Installation with YaST
+
+The installation workflow for manual installation is similar to {SLES}. However,
+it is stripped down and the amount of configuration options is limited. Please, refer to the documentation
+of {SLES} for more information.
+
+=== Unattended Installation with AutoYaST
+
+The installation with AutoYaST works in a similar way as for {SLES}. The two main differenes are limited set
+of options that can be configured via the AutoYaST profile and complete absence of the second stage of the
+AutoYaST workflow. For more details see the {product} and {SLES} documentation. Below comes an
+example of an AutoYaST profile:
+
+....
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <suse_register>
+    <do_registration config:type="boolean">true</do_registration>
+    <reg_code>YOUR_REGISTRATION_CODE</reg_code>
+    <install_updates config:type="boolean">true</install_updates>
+    <reg_server>http://YOUR_SMT_SERVER</reg_server>
+  </suse_register>
+  <bootloader>
+    <global>
+      <timeout config:type="integer">-1</timeout>
+      <hiddenmenu>false</hiddenmenu>
+    </global>
+  </bootloader>
+  <general>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+    </mode>
+  </general>
+  <software>
+    <products config:type="list">
+      <product>SUSE-MicroOS</product>
+    </products>
+    <install_recommended config:type="boolean">true</install_recommended>
+    <packages config:type="list">
+      <package>grub2</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>basesystem</pattern>
+      <pattern>microos-container_runtime</pattern>
+    </patterns>
+  </software>
+  <users config:type="list">
+    <user>
+      <encrypted config:type="boolean">false</encrypted>
+      <user_password>ROOT_PASSWORD</user_password>
+      <username>root</username>
+    </user>
+  </users>
+</profile>
+....
+
+=== Unattended installation with Yomi (technology preview)
+
+=== Deployment of pre-built images
+
+{products} provides raw images which can be deployed directly to the storage of the device (e.g. memory card,
+USB stick or a hard drive). {product} provides images for specific hardware device with specific software selection.
+
+To deploy the image, identify and download the image you need. After decompressing it, dump it to the respective
+device:
+
+....
+xz -d <downloaded_image.raw.xz>
+dd if=<downloaded_image.raw> of=/dev/sdX
+....
+
+When the image is booted for the first time, you should use Ignition or Combustion for initial configuration
+(including setting the root password), otherwise there is no way to access the system after deployment.
