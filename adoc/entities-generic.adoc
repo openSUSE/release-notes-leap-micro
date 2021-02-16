@@ -1,7 +1,12 @@
+
 :mdash: —
 :nbsp:  
 :nbzwsp: ﻿
 :zwsp: ​
+
+// For support tables: +supported/-unsupported character
+:sup: &#43;
+:uns: ‒
 
 :rnotes: Release Notes
 :rversion: @VERSION@
@@ -28,16 +33,19 @@
 :slea: SLE
 :slda: {slea}D
 :slsa: {slea}S
-:slessapa: {slea}S-SAP
+:sleda: {slsa}
+:slesa: {slda}
 :haa: {slea} HA
 :haga: {slea} HA Geo
 :slewea: {sle}-WE
 :sdka: {slea} {sdk}
 :suma: {suse} Manager
 :leap: {opensuse} Leap
+:tw: {opensuse} Tumbleweed
 :scc: {suse} Customer Center
 :ph: {suse} Package Hub
 :ibmz: IBM Z
+:hana: SAP HANA
 // https://www.arm.com/company/policies/trademarks
 :arm: Arm
 :armreg: {arm}*
@@ -45,17 +53,15 @@
 :rpi: Raspberry{nbsp}Pi
 :rpireg: {rpi}*
 
-:arm-product: {product} for {arm}
-:rpi-appliance: {arm-product} for the {rpi}
-:this-rpi-appliance: {arm-product} {this-version} for the {rpi}
-:z-product: {product} for IBM Z and LinuxONE
-:power-product: {product} for POWER
-
 // https://aws.amazon.com/trademark-guidelines/
 :amazon-ec2: Amazon{nbsp}EC2
 :amazon-ec2reg: {amazon-ec2}*
 :aws: AWS
 :awsreg: {aws}*
+// https://azure.microsoft.com
+:azure: Microsoft Azure
+:azurereg: Microsoft* Azure*
+
 // https://amperecomputing.com/
 :ampere: Ampere
 :amperereg: {ampere}*
@@ -148,10 +154,3 @@
 :zynq: Zynq
 :zynqreg: {zynq}*
 
-
-:support-url: https://www.suse.com/support/programs/subscriptions/?id=SUSE_Linux_Enterprise_Server
-:rn-url: https://www.suse.com/releasenotes
-
-:copyright-begin: 2010
-:company: SUSE LLC
-:additional-rightsholders:
