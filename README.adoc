@@ -173,7 +173,7 @@ You can subsume related bugs/Jira issues/topics in one entry when it make sense.
 
 * To ensure consistent spelling and avoid improper shortening of common terms, we use _attributes_ in AsciiDoc.
 These include product names, names for manuals in the product documentation, commonly used URLs.
-These attributes are defined in the files link:adoc/entities_all.adoc[entities_all.adoc] (general variables) and link:adoc/entities15.adoc[entities12.adoc] (SLE 15-specific variables).
+These attributes are defined in the files link:adoc/entities-generic.adoc[entities-generic.adoc] (general variables) and link:adoc/entities-product.adoc[entities-product.adoc] (product-specific variables).
 To use an attribute within your text, write `{<VARNAME>}`, for example: {sles}.
 This will be displayed as _SUSE Linux Enterprise Server_ in the output format of the release notes.
 
