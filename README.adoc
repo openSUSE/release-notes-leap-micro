@@ -49,7 +49,7 @@ Make sure your submissions meet the following requirements:
 == Editing a Note in GitLab (Web UI)
 
 . In the GitLab Web interface, select the branch for the product version that you want to work on.
-For example, to work on the releases notes for SLES Micro 5.0, select https://gitlab.suse.de/documentation/release-notes-sles/tree/5_0[SLE Micro 5.0 branch].
+For example, to work on the releases notes for SLES Micro 5.0, select https://gitlab.suse.de/documentation/release-notes-sle-micro/tree/5_0[SLE Micro 5.0 branch].
 . To open the required AsciiDoc file, click the file name in the table.
 . In the title bar of the file, click *Edit*.
 . Make your changes or additions.
