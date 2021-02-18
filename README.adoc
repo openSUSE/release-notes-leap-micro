@@ -49,8 +49,7 @@ Make sure your submissions meet the following requirements:
 == Editing a Note in GitLab (Web UI)
 
 . In the GitLab Web interface, select the branch for the product version that you want to work on.
-For example, to work on the releases notes for SLES Micro 1.0, select https://gitlab.suse.de/documentation/release-notes-sles/tree/1_0[SLE Micro 1.0 branch].
-// . To see the file(s) you are responsible for, scroll down to https://gitlab.suse.de/documentation/release-notes-sles/tree/15_SP3#user-content-responsibilities[Responsibilities]. +
+For example, to work on the releases notes for SLES Micro 5.0, select https://gitlab.suse.de/documentation/release-notes-sles/tree/5_0[SLE Micro 5.0 branch].
 . To open the required AsciiDoc file, click the file name in the table.
 . In the title bar of the file, click *Edit*.
 . Make your changes or additions.
@@ -68,7 +67,7 @@ From the custom branch, you can continue your work at any time and submit a merg
 
 Whether you are creating the merge request now or later, in the next step, enter a custom name for *Target Branch*.
 To make it easy to identify branches later, use the following branch naming scheme: `<LOGIN>-<SUBJECT>-<RELEASE_BRANCH>`.
-For example, a branch related to a change in the tool MyApp in SLE Micro 1.0 by Frank Sundermeyer could be named `fsundermeyer-myapp-1_0`.
+For example, a branch related to a change in the tool MyApp in SLE Micro 5.0 by Frank Sundermeyer could be named `fsundermeyer-myapp-5_0`.
 
 [IMPORTANT]
 ====
