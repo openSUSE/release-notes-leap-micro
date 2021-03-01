@@ -1,7 +1,7 @@
 :product: {sle} Micro
 :producta: SLE Micro
 :this-version: 5.0
-:rel-date: TBD
+:rel-date: June 2021
 
 
 :doc-url: https://documentation.suse.com/sle-micro/5.0
