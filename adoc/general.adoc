@@ -1,0 +1,31 @@
+
+include::entities-generic.adoc[]
+include::entities-product.adoc[]
+
+[#general]
+== General Features & Fixes
+
+Information in this section applies to all architectures supported by {product} {this-version}.
+
+=== Installation Media
+
+There are two types of installation media of {product}. The installer ISO allows to install via YaST
+or AutoYaST, with the possibility to fully customize the installation. The pre-built images contain
+a system image already pre-configured.
+
+There are slight differences between these two:
+* the pre-built images do not enable SELinux by default
+* the pre-built images do not enable firewall by default
+
+=== Cockpit
+
+For web-based management of a single node, Cockpit web management is included. It is not enabled
+by default and the respective firewall port is not open.
+
+=== Toolbox Container
+
+{product} provides the toolbox container. However, it is not part of the media and needs to be
+downloaded from registry.suse.com. For that the system needs to have access to the registry.
+
+In order to install additional software into the container, you must configure the repositories.
+it does not define any nor does it inherit repositories from the underlying system.

@@ -1,0 +1,24 @@
+
+include::entities-generic.adoc[]
+include::entities-product.adoc[]
+
+[#known_issues]
+== Known Issues
+
+=== Error on console while booting with SELinux enabled
+
+When booting the system with SELinux enabled, the console reports:
+
+....
+Failed to transition into init label 'system_u:system_r:init_t:s0'
+....
+
+This report has been analyzed and evaluated to be harmless.
+
+=== Cockpit not known by firewalld
+
+Firewalld does not know the Cockpit service. As a workaround, open the
+port in firewall by typing this command:
+....
+firewall-cmd --zone=public --permanent --add-port=9090/tcp
+....
