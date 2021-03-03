@@ -13,11 +13,12 @@ include::about-rn.adoc[]
 
 // START ARCH-INDEPENDENT
 [#allArch]
-== General Features & Fixes
 
-Information in this section applies to all architectures supported by {product} {this-version}.
+include::general.adoc[]
 
 include::installation.adoc[]
+
+include::known-bugs.adoc[]
 
 
 // END ARCH INDEPENDENT
