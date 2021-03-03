@@ -5,10 +5,8 @@ include::entities-product.adoc[]
 [#sourceCode]
 == Obtaining Source Code
 
-This {suse} product includes materials licensed to {suse} under the GNU
-General Public License (GPL).
-The GPL requires {suse} to provide the source code that corresponds to the
-GPL-licensed material.
+This {suse} product includes materials licensed to {suse} under the GNU General Public License (GPL).
+The GPL requires {suse} to provide the source code that corresponds to the GPL-licensed material.
 // bsc#1150672
 The source code is available for download at https://www.suse.com/products/server/download/ on Medium{nbsp}2.
 For up to three years after distribution of the {suse} product, upon request, {suse} will mail a copy of the source code.

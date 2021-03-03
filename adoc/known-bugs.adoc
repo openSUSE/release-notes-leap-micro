@@ -17,8 +17,8 @@ This report has been analyzed and evaluated to be harmless.
 
 === Cockpit not known by firewalld
 
-Firewalld does not know the Cockpit service. As a workaround, open the
-port in firewall by typing this command:
+Firewalld does not know the Cockpit service.
+As a workaround, open the port in firewall by typing this command:
 ....
 firewall-cmd --zone=public --permanent --add-port=9090/tcp
 ....
