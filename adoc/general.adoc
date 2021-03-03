@@ -14,6 +14,7 @@ The installer ISO allows to install via YaST or AutoYaST, with the possibility t
 The pre-built images contain a system image already pre-configured.
 
 There are slight differences between these two:
+
 * the pre-built images do not enable SELinux by default
 * the pre-built images do not enable firewall by default
 
