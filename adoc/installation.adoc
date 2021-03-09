@@ -71,15 +71,26 @@ Below comes an example of an AutoYaST profile:
 </profile>
 ....
 
-Note that the list of patterns contains the SELinux pattern.
-It is needed unless you disable SELinux in the security section:
+{autoyast} only supports limited set of sections compared to {slesa}:
 
-....
-  <security>
-    <selinux_mode>disabled</selinux_mode>
-  </security>
-....
+* `iscsi-client`
+* `fcoe-client`
+* `scripts` (`pre-scripts`, `postpartitioning-scripts`, `chroot-scripts`)
+* `report`
+* `general`
+* `add-on`
+* `suse_register`
+* `networking`
+* `keyboard`
+* `language`
+* `partitioning`
+* `partitioning_advanced`
+* `configuration_management`
+* `runlevel / services-manager`
+* `ssh_import`
+* `security`
 
+[NOTE]
 The system will not boot if you do not install the SELinux pattern and keep SELinux enabled.
 
 === Unattended installation with Yomi (technology preview)
@@ -112,3 +123,27 @@ ignition.firstboot
 ....
 
 to the kernel command-line.
+
+The minimal Ignition configuration file, which would be stored as `ignition/config.ign` on a USB stick, could look like this:
+
+....
+{
+  "ignition":{
+    "version":"3.1.0"
+  },
+  "passwd":{
+    "users":[
+      {
+        "name":"root",
+        "passwordHash":"hash, created with e.g. `openssl passwd -6`"
+      }
+    ]
+  }
+}
+....
+
+More information about Ignition and Combustion, including further examples, can be found in the {opensuse} wiki:
+....
+https://en.opensuse.org/Portal:MicroOS/Ignition
+https://en.opensuse.org/Portal:MicroOS/Combustion
+....

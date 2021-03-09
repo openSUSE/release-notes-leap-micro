@@ -15,13 +15,26 @@ The pre-built images contain a system image already pre-configured.
 
 There are slight differences between these two:
 
-* the pre-built images do not enable SELinux by default
-* the pre-built images do not enable firewall by default
+* the software selection for default installation from ISO contains fewer packages than the pre-built image
+* `firewalld` is installed from the ISO only if it gets enabled during installation
+
+The images have two things in common:
+* SELinux is not enabled by default
+* firewall is not enabled by default
+
+=== Podman and `firewalld`
+
+When reloading `firewalld` via `firewall-cmd --reload`, all Podman related rules go missing.
+This is a known issue:
+
+https://github.com/containers/podman/issues/5431
+
+Because of that, firewalld is not enabled by default installation.
 
 === Cockpit
 
 For web-based management of a single node, Cockpit web management is included.
-It is not enabled by default and the respective firewall port is not open.
+It is not enabled by default and the respective firewall port is not open if firewall is enabled.
 
 === Toolbox Container
 
