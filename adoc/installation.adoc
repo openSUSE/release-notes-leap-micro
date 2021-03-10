@@ -26,6 +26,7 @@ The installation with AutoYaST works in a similar way as for {SLES}.
 The two main differenes are limited set of options that can be configured via the AutoYaST profile and complete absence of the second stage of the AutoYaST workflow. For more details see the {product} and {SLES} documentation.
 Below comes an example of an AutoYaST profile:
 
+[source,xml]
 ....
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE profile>
