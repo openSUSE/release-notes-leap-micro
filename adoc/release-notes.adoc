@@ -18,7 +18,7 @@ include::general.adoc[]
 
 include::installation.adoc[]
 
-include::known-bugs.adoc[]
+include::known-issues.adoc[]
 
 
 // END ARCH INDEPENDENT

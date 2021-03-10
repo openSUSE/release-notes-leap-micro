@@ -18,16 +18,15 @@ This report has been analyzed and evaluated to be harmless.
 === Podman and `firewalld`
 
 When reloading `firewalld` via `firewall-cmd --reload`, all Podman related rules go missing.
-This is a known issue:
+For this reason, `firewalld` is not enabled by default during installation.
+For more information, see https://github.com/containers/podman/issues/5431.
 
-https://github.com/containers/podman/issues/5431
+=== Cockpit not known by `firewalld`
 
-Because of that, firewalld is not enabled by default installation.
+`firewalld` does not know the Cockpit service.
+As a workaround, open the port in `firewalld` by typing this command:
 
-=== Cockpit not known by firewalld
-
-Firewalld does not know the Cockpit service.
-As a workaround, open the port in firewall by typing this command:
+[source,shell]
 ....
 firewall-cmd --zone=public --permanent --add-port=9090/tcp
 ....

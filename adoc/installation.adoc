@@ -18,7 +18,7 @@ Below find notes to individual approaches.
 
 The installation workflow for manual installation is similar to {SLES}.
 However, it is stripped down and the amount of configuration options is limited.
-Please, refer to the documentation of {SLES} for more information.
+For more information see the {sles} documentation.
 
 === Unattended Installation with AutoYaST
 
@@ -100,13 +100,13 @@ Instalation with Yomi is only a technology preview.
 
 === Deployment of pre-built images
 
-{product} provides raw images which can be deployed directly to the storage of the device (e.g. memory card,
-USB stick or a hard drive).
+{product} provides raw images which can be deployed directly to the storage of the device, for example, memory card, USB stick or a hard drive.
 {product} provides images for specific hardware device with specific software selection.
 
 To deploy the image, identify and download the image you need.
 After decompressing it, dump it to the respective device:
 
+[source,bash]
 ....
 xz -d <downloaded_image.raw.xz>
 dd if=<downloaded_image.raw> of=/dev/sdX
@@ -116,16 +116,11 @@ When the image is booted for the first time, you should use Ignition or Combusti
 (including setting the root password), otherwise there is no way to access the system after deployment.
 
 Ignition or Combustion are invoked only the first time the image boots.
-In order to invoke it at a later reboot, append
-
-....
-ignition.firstboot
-....
-
-to the kernel command-line.
+In order to invoke it at a later reboot, append `ignition.firstboot` to the kernel command line.
 
 The minimal Ignition configuration file, which would be stored as `ignition/config.ign` on a USB stick, could look like this:
 
+[source,json]
 ....
 {
   "ignition":{
@@ -135,15 +130,14 @@ The minimal Ignition configuration file, which would be stored as `ignition/conf
     "users":[
       {
         "name":"root",
-        "passwordHash":"hash, created with e.g. `openssl passwd -6`"
+        "passwordHash":"hash, created with, for example, `openssl passwd -6`"
       }
     ]
   }
 }
 ....
 
-More information about Ignition and Combustion, including further examples, can be found in the {opensuse} wiki:
-....
-https://en.opensuse.org/Portal:MicroOS/Ignition
-https://en.opensuse.org/Portal:MicroOS/Combustion
-....
+More information about Ignition and Combustion, including further examples, can be found at the these links:
+
+* https://en.opensuse.org/Portal:MicroOS/Ignition
+* https://en.opensuse.org/Portal:MicroOS/Combustion
