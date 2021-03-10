@@ -15,6 +15,15 @@ Failed to transition into init label 'system_u:system_r:init_t:s0'
 
 This report has been analyzed and evaluated to be harmless.
 
+=== Podman and `firewalld`
+
+When reloading `firewalld` via `firewall-cmd --reload`, all Podman related rules go missing.
+This is a known issue:
+
+https://github.com/containers/podman/issues/5431
+
+Because of that, firewalld is not enabled by default installation.
+
 === Cockpit not known by firewalld
 
 Firewalld does not know the Cockpit service.
@@ -22,3 +31,10 @@ As a workaround, open the port in firewall by typing this command:
 ....
 firewall-cmd --zone=public --permanent --add-port=9090/tcp
 ....
+
+=== Installation via VNC
+
+The {yast} installer offers installation via VNC.
+Keep in mind that the VNC server is only available during the installation, but not for the installed system.
+The installer issues a warning that the respective packages cannot be installed.
+This is correct, you can ignore this warning.

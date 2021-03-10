@@ -22,15 +22,6 @@ The images have two things in common:
 * SELinux is not enabled by default
 * firewall is not enabled by default
 
-=== Podman and `firewalld`
-
-When reloading `firewalld` via `firewall-cmd --reload`, all Podman related rules go missing.
-This is a known issue:
-
-https://github.com/containers/podman/issues/5431
-
-Because of that, firewalld is not enabled by default installation.
-
 === Cockpit
 
 For web-based management of a single node, Cockpit web management is included.
