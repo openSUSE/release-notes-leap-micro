@@ -72,7 +72,7 @@ Below comes an example of an AutoYaST profile:
 </profile>
 ....
 
-{autoyast} only supports limited set of sections compared to {slesa}:
+{autoyast} only supports limited set of sections compared to {sles}:
 
 * `iscsi-client`
 * `fcoe-client`
@@ -97,7 +97,7 @@ The system will not boot if you do not install the SELinux pattern and keep SELi
 === Unattended installation with Yomi (technology preview)
 
 To learn how to install a system with Yomi, read the documentation of SUSE Manager.
-Instalation with Yomi is only a technology preview.
+Installation with Yomi is only a technology preview.
 
 === Deployment of pre-built images
 
