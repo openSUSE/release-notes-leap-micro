@@ -36,3 +36,10 @@ For that the system needs to have access to the registry.
 
 In order to install additional software into the container, you must configure the repositories.
 It does not define any nor does it inherit repositories from the underlying system.
+
+=== System V Init Scripts
+
+{product} does not support init script of system services, which are usually located in `/etc/init.d` directory.
+Even if this directory still exists, it is empty on purpose.
+Systemd unit files should be used instead of initscripts.
+To start system services or to configure their status on boot, use the `systemctl` command instead.
