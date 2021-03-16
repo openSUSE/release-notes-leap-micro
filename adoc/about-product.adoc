@@ -1,0 +1,30 @@
+
+include::entities-generic.adoc[]
+include::entities-product.adoc[]
+
+[#intro]
+== {product}
+
+[#intro-documentation]
+=== Documentation
+
+// beta
+ifeval::["{lifecycle}" == "beta"]
+For the most up-to-date version of the documentation for {product}{nbsp}{this-version}, see {doc-url-beta} (draft version).
+endif::[]
+// maintained
+ifeval::["{lifecycle}" == "maintained"]
+For the most up-to-date version of the documentation for {product}{nbsp}{this-version}, see {doc-url}.
+endif::[]
+// unmaintained
+ifeval::["{lifecycle}" == "unmaintained"]
+For the most up-to-date version of the documentation for {product}{nbsp}{this-version}, see {doc-url}.
+endif::[]
+
+[#intro-lifecycle]
+=== Support and life cycle
+
+{product} is backed by award-winning support from {suse}, an established technology leader with a proven history of delivering enterprise-quality support services.
+
+{product}{nbsp}{this-version} has a 12-month life cycle.
+For more information, see https://www.suse.com/lifecycle and the Support Policy page at https://www.suse.com/support/policy.html.
