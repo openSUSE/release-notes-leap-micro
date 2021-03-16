@@ -14,17 +14,21 @@ include::entities-product.adoc[]
 
 Below find notes to individual approaches.
 
+
 === Manual Installation with YaST
 
-The installation workflow for manual installation is similar to {SLES}.
-However, it is stripped down and the amount of configuration options is limited.
-For more information see the {sles} documentation.
+The installation workflow for manual installation is similar to {sles}.
+However, it is stripped down and configuration options are more limited.
+For more information, see the {sles} documentation.
+
 
 === Unattended Installation with AutoYaST
 
-The installation with AutoYaST works in a similar way as for {SLES}.
-The two main differenes are limited set of options that can be configured via the AutoYaST profile and complete absence of the second stage of the AutoYaST workflow. For more details see the {product} and {SLES} documentation.
-Below comes an example of an AutoYaST profile:
+The installation with AutoYaST works in a similar way as for {sles}.
+The two main differences are limited set of options that can be configured via the AutoYaST profile and complete absence of the second stage of the AutoYaST workflow.
+For more information, see the {product} and {sles} documentation.
+
+The following example shows an AutoYaST profile:
 
 [source,xml]
 ....
@@ -73,7 +77,7 @@ Below comes an example of an AutoYaST profile:
 </profile>
 ....
 
-{autoyast} only supports limited set of sections compared to {sles}:
+{autoyast} only supports a limited set of sections compared to {sles}:
 
 * `bootloader`
 * `configuration_management`
@@ -118,20 +122,23 @@ The example profile above already includes this line.
 ====
 
 [NOTE]
+.SELinux is necessary
 The system will not boot if you do not install the SELinux pattern and keep SELinux enabled.
+
 
 === Unattended installation with Yomi (technology preview)
 
 To learn how to install a system with Yomi, read the documentation of SUSE Manager.
 Installation with Yomi is only a technology preview.
 
+
 === Deployment of pre-built images
 
-{product} provides raw images which can be deployed directly to the storage of the device, for example, memory card, USB stick or a hard drive.
-{product} provides images for specific hardware device with specific software selection.
+{product} is provided as raw images which can be deployed directly to a storage device, for example, a memory card, a USB stick, or a hard drive.
+{product} is also provided as images for specific hardware device with a customized software selection.
 
-To deploy the image, identify and download the image you need.
-After decompressing it, dump it to the respective device:
+To deploy an image, first identify and download the image you need.
+Then decompress it and write it to a storage device:
 
 [source,bash]
 ....
@@ -139,13 +146,14 @@ xz -d <downloaded_image.raw.xz>
 dd if=<downloaded_image.raw> of=/dev/sdX
 ....
 
-When the image is booted for the first time, you should use Ignition or Combustion for initial configuration
-(including setting the root password), otherwise there is no way to access the system after deployment.
+When the image is first booted, use Ignition or Combustion for initial configuration, which includes setting the root password.
+Otherwise, there is no way to access the system after deployment.
 
 Ignition or Combustion are invoked only the first time the image boots.
-In order to invoke it at a later reboot, append `ignition.firstboot` to the kernel command line.
+To invoke them at a later reboot, append `ignition.firstboot` to the kernel command line.
 
-The minimal Ignition configuration file, which would be stored as `ignition/config.ign` on a USB stick, could look like this:
+Ignition configuration files should be named `ignition/config.ign`, and can be stored on a USB stick.
+A minimal Ignition configuration file could look like this:
 
 [source,json]
 ....
