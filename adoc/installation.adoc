@@ -15,7 +15,7 @@ include::entities-product.adoc[]
 Below find notes to individual approaches.
 
 
-=== Manual installation with YaST
+=== Manually installing with YaST
 
 The installation workflow for manual installation is similar to {sles}.
 However, it is stripped down and configuration options are more limited.
@@ -132,7 +132,7 @@ To learn how to install a system with Yomi, read the documentation of SUSE Manag
 Installation with Yomi is only a technology preview.
 
 
-=== Deployment of pre-built images
+=== Deploying pre-built images
 
 {product} is provided as raw images which can be deployed directly to a storage device, for example, a memory card, a USB stick, or a hard drive.
 {product} is also provided as images for specific hardware device with a customized software selection.
