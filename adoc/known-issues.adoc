@@ -13,13 +13,15 @@ When booting the system with SELinux enabled, the console reports:
 Failed to transition into init label 'system_u:system_r:init_t:s0'
 ....
 
-This report has been analyzed and evaluated to be harmless.
+This message is harmless.
+
 
 === Podman and `firewalld`
 
 When reloading `firewalld` via `firewall-cmd --reload`, all Podman related rules go missing.
 For this reason, `firewalld` is not enabled by default during installation.
 For more information, see https://github.com/containers/podman/issues/5431.
+
 
 === Cockpit not known by `firewalld`
 
@@ -31,9 +33,10 @@ As a workaround, open the port in `firewalld` by typing this command:
 firewall-cmd --zone=public --permanent --add-port=9090/tcp
 ....
 
+
 === Installation via VNC
 
 The {yast} installer offers installation via VNC.
-Keep in mind that the VNC server is only available during the installation, but not for the installed system.
+However, the VNC server is only available during the installation, but not for the installed system.
 The installer issues a warning that the respective packages cannot be installed.
 This is correct, you can ignore this warning.
