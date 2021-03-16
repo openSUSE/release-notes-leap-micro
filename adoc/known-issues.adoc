@@ -34,9 +34,13 @@ firewall-cmd --zone=public --permanent --add-port=9090/tcp
 ....
 
 
-=== Installation via VNC
+[#issue-install-vnc]
+=== VNC package cannot be installed during installation
 
 The {yast} installer offers installation via VNC.
-However, the VNC server is only available during the installation, but not for the installed system.
-The installer issues a warning that the respective packages cannot be installed.
-This is correct, you can ignore this warning.
+The installer also tries to make it possible to use the final system the same way that the system was initially installed.
+Therefore, the installer will attempt to install appropriate software and open appropriate firewall ports for later access to the system.
+However, the VNC server package is only available during the installation, but not for the installed system.
+
+As the VNC server package cannot be installed, the installer will issue a warning.
+You can safely ignore this warning.
