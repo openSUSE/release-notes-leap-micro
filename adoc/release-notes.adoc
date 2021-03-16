@@ -13,8 +13,6 @@ include::about-rn.adoc[]
 
 // ===================================================================
 
-// START ARCH-INDEPENDENT
-
 include::general.adoc[]
 
 include::installation.adoc[]
@@ -22,9 +20,8 @@ include::installation.adoc[]
 include::known-issues.adoc[]
 
 
-// END ARCH INDEPENDENT
-
 // ===================================================================
+
 include::source-code.adoc[]
 
 include::legal.adoc[]

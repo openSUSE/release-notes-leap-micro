@@ -7,14 +7,13 @@ include::entities-product.adoc[]
 
 {product} {this-version} can be installed in the following ways:
 
-* manual installation with YaST
-* unattended installation with AutoYaST
-* unattended installation with Yomi (technology preview)
-* deployment of pre-built images
-
-Below find notes to individual approaches.
+* <<#install-yast>>
+* <<#install-autoyast>>
+* <<#install-yomi>>
+* <<#deploy-image>>
 
 
+[#install-yast]
 === Manually installing with YaST
 
 The installation workflow for manual installation is similar to {sles}.
@@ -22,13 +21,18 @@ However, it is stripped down and configuration options are more limited.
 For more information, see the {sles} documentation.
 
 
-=== Unattended installation with AutoYaST
+[#install-autoyast]
+=== Unattended installation with {autoyast}
 
-The installation with AutoYaST works in a similar way as for {sles}.
-The two main differences are limited set of options that can be configured via the AutoYaST profile and complete absence of the second stage of the AutoYaST workflow.
+Installing {product} with {autoyast} works similarly to installing {slesa} with {autoyast}.
+The two main differences are:
+
+* There is limited set of options that can be configured via the {autoyast} profile.
+* There is no second stage of the {autoyast} workflow.
+
 For more information, see the {product} and {sles} documentation.
 
-The following example shows an AutoYaST profile:
+The following example shows an {autoyast} profile:
 
 [source,xml]
 ....
@@ -111,7 +115,7 @@ The following example shows an AutoYaST profile:
 ====
 {autoyast} can set some options in either the first or the second stage.
 {product} does not include a second stage.
-For some settings (such as networking), you need to explicitly disable the second stage:
+For some settings (such as networking) to be applied during the first stage, you need to explicitly disable the second stage:
 
 [source,xml]
 ....
@@ -121,17 +125,19 @@ For some settings (such as networking), you need to explicitly disable the secon
 The example profile above already includes this line.
 ====
 
-[NOTE]
+[IMPORTANT]
 .SELinux is necessary
 The system will not boot if you do not install the SELinux pattern and keep SELinux enabled.
 
 
+[#install-yomi]
 === Unattended installation with Yomi (technology preview)
 
-To learn how to install a system with Yomi, read the documentation of SUSE Manager.
-Installation with Yomi is only a technology preview.
+To learn how to install a system with Yomi, see the link:https://documentation.suse.com/external-tree/en-us/suma/4.1/suse-manager/salt/yomi.html[{suma} documentation, section Install using Yomi].
+Installation with Yomi is a technology preview.
 
 
+[#deploy-image]
 === Deploying pre-built images
 
 {product} is provided as raw images which can be deployed directly to a storage device, for example, a memory card, a USB stick, or a hard drive.
@@ -172,7 +178,7 @@ A minimal Ignition configuration file could look like this:
 }
 ....
 
-More information about Ignition and Combustion, including further examples, can be found at the these links:
+For more information about Ignition and Combustion, including further examples, see:
 
 * https://en.opensuse.org/Portal:MicroOS/Ignition
 * https://en.opensuse.org/Portal:MicroOS/Combustion

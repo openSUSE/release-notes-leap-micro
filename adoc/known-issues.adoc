@@ -2,9 +2,11 @@
 include::entities-generic.adoc[]
 include::entities-product.adoc[]
 
-[#known_issues]
+[#known-issue]
 == Known issues
 
+
+[#issue-selinux-boot]
 === Error on console while booting with SELinux enabled
 
 When booting the system with SELinux enabled, the console reports:
@@ -16,14 +18,16 @@ Failed to transition into init label 'system_u:system_r:init_t:s0'
 This message is harmless.
 
 
+[#issue-firewalld-podman]
 === Podman and `firewalld`
 
-When reloading `firewalld` via `firewall-cmd --reload`, all Podman related rules go missing.
+When reloading `firewalld` via `firewall-cmd --reload`, all Podman-related rules go missing.
 For this reason, `firewalld` is not enabled by default during installation.
 For more information, see https://github.com/containers/podman/issues/5431.
 
 
-=== Cockpit not known by `firewalld`
+[#issue-firewalld-cockpit]
+=== Cockpit service not known to `firewalld`
 
 `firewalld` does not know the Cockpit service.
 As a workaround, open the port in `firewalld` by typing this command:
