@@ -46,6 +46,7 @@ Below comes an example of an AutoYaST profile:
   <general>
     <mode>
       <confirm config:type="boolean">false</confirm>
+      <second_stage config:type="boolean">false</second_stage>
     </mode>
   </general>
   <software>
@@ -90,6 +91,14 @@ Below comes an example of an AutoYaST profile:
 * `runlevel / services-manager`
 * `ssh_import`
 * `security`
+
+[NOTE]
+{autoyast} is capable of setting some of the options in either first or second stage.
+Since {product} does not include 2nd stage, for some of the setting it is necessary to specify explicitly that 2nd stage would not run via
+....
+<second_stage config:type="boolean">false</second_stage>
+....
+as in the example above.
 
 [NOTE]
 The system will not boot if you do not install the SELinux pattern and keep SELinux enabled.
