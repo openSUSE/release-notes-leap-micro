@@ -103,12 +103,19 @@ Below comes an example of an AutoYaST profile:
 * `user_defaults`
 
 [NOTE]
-{autoyast} is capable of setting some of the options in either first or second stage.
-Since {product} does not include 2nd stage, for some of the setting it is necessary to specify explicitly that 2nd stage would not run via
+.Explicitly disable the second stage
+====
+{autoyast} can set some options in either the first or the second stage.
+{product} does not include a second stage.
+For some settings (such as networking), you need to explicitly disable the second stage:
+
+[source,xml]
 ....
 <second_stage config:type="boolean">false</second_stage>
 ....
-as in the example above.
+
+The example profile above already includes this line.
+====
 
 [NOTE]
 The system will not boot if you do not install the SELinux pattern and keep SELinux enabled.
