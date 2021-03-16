@@ -7,12 +7,13 @@ include::entities-product.adoc[]
 
 include::abstract.adoc[]
 
+include::about-product.adoc[]
+
 include::about-rn.adoc[]
 
 // ===================================================================
 
 // START ARCH-INDEPENDENT
-[#allArch]
 
 include::general.adoc[]
 

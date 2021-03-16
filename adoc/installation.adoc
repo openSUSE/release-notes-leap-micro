@@ -15,14 +15,14 @@ include::entities-product.adoc[]
 Below find notes to individual approaches.
 
 
-=== Manual Installation with YaST
+=== Manual installation with YaST
 
 The installation workflow for manual installation is similar to {sles}.
 However, it is stripped down and configuration options are more limited.
 For more information, see the {sles} documentation.
 
 
-=== Unattended Installation with AutoYaST
+=== Unattended installation with AutoYaST
 
 The installation with AutoYaST works in a similar way as for {sles}.
 The two main differences are limited set of options that can be configured via the AutoYaST profile and complete absence of the second stage of the AutoYaST workflow.

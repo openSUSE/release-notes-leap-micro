@@ -3,7 +3,7 @@ include::entities-generic.adoc[]
 include::entities-product.adoc[]
 
 [#sourceCode]
-== Obtaining Source Code
+== Obtaining source code
 
 This {suse} product includes materials licensed to {suse} under the GNU General Public License (GPL).
 The GPL requires {suse} to provide the source code that corresponds to the GPL-licensed material.

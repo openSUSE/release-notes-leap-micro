@@ -3,7 +3,7 @@ include::entities-generic.adoc[]
 include::entities-product.adoc[]
 
 [#known_issues]
-== Known Issues
+== Known issues
 
 === Error on console while booting with SELinux enabled
 

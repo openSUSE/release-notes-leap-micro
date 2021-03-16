@@ -3,7 +3,7 @@ include::entities-generic.adoc[]
 include::entities-product.adoc[]
 
 [#legal]
-== Legal Notices
+== Legal notices
 
 {suse} makes no representations or warranties with regard to the contents or use of this documentation, and specifically disclaims any express or implied warranties of merchantability or fitness for any particular purpose.
 Further, {suse} reserves the right to revise this publication and to make changes to its content, at any time, without the obligation to notify any person or entity of such revisions or changes.
