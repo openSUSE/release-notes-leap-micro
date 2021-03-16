@@ -32,10 +32,11 @@ It is not enabled by default and the respective firewall port is not open if fir
 
 {product} provides the `toolbox` container.
 However, it is not part of the media and needs to be downloaded from https://registry.suse.com.
-For that the system needs to have access to the registry.
+To download from the registry, the system needs network access.
 
-In order to install additional software into the container, you must configure the repositories.
-It does not define any nor does it inherit repositories from the underlying system.
+The `toolbox` container does not include or inherit a software repository setup from the underlying system.
+To install additional software into the container, you must configure repositories manually.
+
 
 === System V init scripts
 
