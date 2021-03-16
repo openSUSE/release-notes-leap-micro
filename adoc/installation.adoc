@@ -146,8 +146,8 @@ xz -d <downloaded_image.raw.xz>
 dd if=<downloaded_image.raw> of=/dev/sdX
 ....
 
-When the image is first booted, use Ignition or Combustion for initial configuration, which includes setting the root password.
-Otherwise, there is no way to access the system after deployment.
+When the image is first booted, use Ignition or Combustion for initial configuration.
+Make sure to set a root password or there will be no way to access the system after deployment.
 
 Ignition or Combustion are invoked only the first time the image boots.
 To invoke them at a later reboot, append `ignition.firstboot` to the kernel command line.
