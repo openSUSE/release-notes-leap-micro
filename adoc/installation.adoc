@@ -75,22 +75,32 @@ Below comes an example of an AutoYaST profile:
 
 {autoyast} only supports limited set of sections compared to {sles}:
 
-* `iscsi-client`
+* `bootloader`
+* `configuration_management`
 * `fcoe-client`
-* `scripts` (`pre-scripts`, `postpartitioning-scripts`, `chroot-scripts`)
-* `report`
+* `files`
+* `firewall`
+* `groups`
 * `general`
-* `add-on`
-* `suse_register`
-* `networking`
+* `host`
+* `iscsi-client`
+* `kdump`
 * `keyboard`
 * `language`
+* `login_settings`
+* `networking`
 * `partitioning`
 * `partitioning_advanced`
-* `configuration_management`
-* `runlevel / services-manager`
-* `ssh_import`
+* `report`
+* `runlevel` / `services-manager`
+* `scripts` (`pre-scripts`, `postpartitioning-scripts`, `chroot-scripts`)
 * `security`
+* `software`
+* `ssh_import`
+* `suse_register`
+* `timezone`
+* `users`
+* `user_defaults`
 
 [NOTE]
 {autoyast} is capable of setting some of the options in either first or second stage.
