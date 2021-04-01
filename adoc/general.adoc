@@ -35,6 +35,28 @@ Cockpit is not enabled by default and its firewall port is not open if the firew
 For more information, see <<#issue-firewalld-cockpit>>.
 
 
+[#general-suma]
+=== Managing {product} with {suma}
+
+{suma} can be used to manage {product} hosts.
+There are certain limitations:
+* Installing additional software or patching the system does not work with the Web UI because `transactional-update` needs to be used instead of `zypper`.
+As a workaround, you can execute remote commands and call `transactional-update` tool on the {product} host.
+* {product} host cannot be monitored with {suma}
+* {suma} does not provide integrated container management yet.
+As a workaround, you can use Salt via `cmd.run podman`.
+We intend to resolve these issues in the future maintenance updates of {suma}.
+
+
+[#general-selinux]
+=== Enabling SELinux
+
+{product} includes SELinux with base system policies.
+Before enabling SELinux, make sure to install the necessary policies for your workload.
+
+If you are running {product} as KVM virtualization host, the use of SELinux is strongly discouraged.
+
+
 [#general-toolbox]
 === `toolbox` container
 
@@ -43,7 +65,8 @@ However, it is not part of the media and needs to be downloaded from https://reg
 To download from the registry, the system needs network access.
 
 The `toolbox` container does not include or inherit a software repository setup from the underlying system.
-To install additional software into the container, you must configure repositories manually.
+If the underlying system is registered properly, `zypper` will enable a basic set of repositories (`Basesystem` and `Server Applications` modules of {sles} 15{nbsp}SP2) when you execute it.
+Then you can install additional software into the container.
 
 
 [#general-sysv-support]
