@@ -1,0 +1,8 @@
+5.0.20210401
+- Added notes on SELinux, SUSE Manager, updated software for toolbox
+- Added note about second stage
+- Added note about System V init scripts
+- Updated list of AutoYaST modules
+- Various wording and formatting updates
+
+
