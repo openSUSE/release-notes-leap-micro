@@ -122,11 +122,6 @@ For some settings (such as networking) to be applied during the first stage, you
 The example profile above already includes this line.
 ====
 
-[IMPORTANT]
-.SELinux is necessary
-The system will not boot if you do not install the SELinux pattern and keep SELinux enabled.
-
-
 [#install-yomi]
 === Unattended installation with Yomi (technology preview)
 
