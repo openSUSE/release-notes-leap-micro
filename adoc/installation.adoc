@@ -86,11 +86,8 @@ The following example shows an {autoyast} profile:
 * `bootloader`
 * `configuration_management`
 * `fcoe-client`
-* `files`
-* `firewall`
 * `groups`
 * `general`
-* `host`
 * `iscsi-client`
 * `kdump`
 * `keyboard`
