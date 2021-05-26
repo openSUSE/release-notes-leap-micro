@@ -1,6 +1,6 @@
 include::attributes.adoc[]
-include::entities-generic.adoc[]
-include::entities-product.adoc[]
+include::attributes-generic.adoc[]
+include::attributes-product.adoc[]
 
 [#rnotes]
 = {rnotes}
