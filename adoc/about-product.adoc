@@ -5,21 +5,9 @@ include::attributes-product.adoc[]
 [#intro]
 == {product}
 
-[#intro-documentation]
-=== Documentation
+{product}{nbsp}{this-version} is a modern operating system primarily targeted for edge computing.
 
-// beta
-ifeval::["{lifecycle}" == "beta"]
-For the most up-to-date version of the documentation for {product}{nbsp}{this-version}, see {doc-url-beta} (draft version).
-endif::[]
-// maintained
-ifeval::["{lifecycle}" == "maintained"]
-For the most up-to-date version of the documentation for {product}{nbsp}{this-version}, see {doc-url}.
-endif::[]
-// unmaintained
-ifeval::["{lifecycle}" == "unmaintained"]
-For the most up-to-date version of the documentation for {product}{nbsp}{this-version}, see {doc-url}.
-endif::[]
+include::about-documentation.adoc[]
 
 [#intro-lifecycle]
 === Support and life cycle

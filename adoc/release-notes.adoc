@@ -1,4 +1,3 @@
-include::attributes.adoc[]
 include::attributes-generic.adoc[]
 include::attributes-product.adoc[]
 
@@ -13,12 +12,19 @@ include::about-rn.adoc[]
 
 // ===================================================================
 
+// START ARCH-INDEPENDENT
+[#all-architecture]
+== Changes affecting all architectures
+
+Information in this section applies to all architectures supported by {product} {this-version}.
+
 include::general.adoc[]
 
 include::installation.adoc[]
 
 include::known-issues.adoc[]
 
+// END ARCH INDEPENDENT
 
 // ===================================================================
 
