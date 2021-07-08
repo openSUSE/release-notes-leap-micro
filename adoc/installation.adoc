@@ -174,3 +174,12 @@ For more information about Ignition and Combustion, including further examples, 
 
 * https://en.opensuse.org/Portal:MicroOS/Ignition
 * https://en.opensuse.org/Portal:MicroOS/Combustion
+
+[#upgrade]
+=== Upgrade from previous version
+
+Upgrade from SLE Micro 5.0 is only possible via the transactional-update tool.
+
+In order to upgrade a registered system, use the 'transactional-update migration' command from running system.
+
+If your system is not registered, update the configured repositories and use 'transactional-update dup' command.
