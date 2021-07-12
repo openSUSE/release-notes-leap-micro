@@ -1,8 +1,11 @@
+5.1.20210712 (tracked in bsc#933411)
+- Fixed incorrect SELinux statement (bsc#1185837)
+- Fixed the list of supported AutoYaST sections (bsc#1185844)
+
+
 5.0.20210401
 - Added notes on SELinux, SUSE Manager, updated software for toolbox
 - Added note about second stage
 - Added note about System V init scripts
 - Updated list of AutoYaST modules
 - Various wording and formatting updates
-
-
