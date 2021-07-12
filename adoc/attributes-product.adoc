@@ -1,6 +1,7 @@
 :product: {sle} Micro
 :producta: SLE Micro
-:this-version: 5.0
+:previous-version: 5.0
+:this-version: 5.1
 :rel-date: June 2021
 
 :abstract: {product} is a modern operating system primarily targeted for edge computing. This document provides a high-level overview of features, capabilities, and limitations of {product} {this-version}.
