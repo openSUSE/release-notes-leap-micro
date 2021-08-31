@@ -1,3 +1,8 @@
+5.1.20210831 (tracked in bsc#933411)
+- Add note about Kernel Live Patching
+- Add note about Intel SDO
+
+
 5.1.20210712 (tracked in bsc#933411)
 - Fixed incorrect SELinux statement (bsc#1185837)
 - Fixed the list of supported AutoYaST sections (bsc#1185844)
