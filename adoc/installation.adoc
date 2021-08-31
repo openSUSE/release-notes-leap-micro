@@ -83,6 +83,7 @@ The following example shows an {autoyast} profile:
 
 {autoyast} only supports a limited set of sections compared to {sles}:
 
+* `add-on`
 * `bootloader`
 * `configuration_management`
 * `fcoe-client`

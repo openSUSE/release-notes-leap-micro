@@ -22,3 +22,5 @@
 :copyright-end: {docyear}
 :company: SUSE LLC
 :additional-rightsholders:
+
+:sdo: Intel Secure Device Onboard

@@ -14,6 +14,7 @@ Information in this section applies to all architectures supported by {product} 
 There are two types of installation media of {product}.
 The installer ISO allows to install via YaST or AutoYaST, with the possibility to fully customize the installation.
 The pre-built images contain a system image already pre-configured.
+Neither of the media is intended to be used for upgrades from the previous version of {product}.
 
 There are slight differences between these two:
 
@@ -24,7 +25,6 @@ The images have two things in common:
 
 * SELinux is not enabled by default
 * `firewalld` is not enabled by default
-
 
 [#general-cockpit]
 === Cockpit web-based node management system
@@ -67,6 +67,21 @@ To download from the registry, the system needs network access.
 The `toolbox` container does not include or inherit a software repository setup from the underlying system.
 If the underlying system is registered properly, `zypper` will enable a basic set of repositories (`Basesystem` and `Server Applications` modules of {sles} 15{nbsp}SP2) when you execute it.
 Then you can install additional software into the container.
+
+
+[#general-livepatch]
+=== Kernel Live Patching
+
+{product} now supports Kernel Live Patching.
+If your subscription includes it, you can either install it directly during the installation, or register the Live Patching module later using the `transactional update` command.
+
+[#general-sdo]
+=== {sdo} (SDO)
+
+{product} includes needed packages for {sdo}.
+{sdo} helps onboard any device to any device management system.
+The packages are only provided as a technology preview and do not offer full support.
+Using {sdo} needs proper integration into your target environment and only works on supported hardware.
 
 
 [#general-sysv-support]
