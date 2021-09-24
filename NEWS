@@ -1,3 +1,11 @@
+5.1.20210924 (tracked in bsc#933411)
+- Updated note about upgrading
+- Updated note about SUSE Manager
+- Updated note about unsupported SELinux
+- Updated note about Kernel Live Patching
+- Added note about duplicate IP
+
+
 5.1.20210831 (tracked in bsc#933411)
 - Add note about Kernel Live Patching
 - Add note about Intel SDO
