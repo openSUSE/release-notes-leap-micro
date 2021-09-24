@@ -26,16 +26,11 @@ For this reason, `firewalld` is not enabled by default during installation.
 For more information, see https://github.com/containers/podman/issues/5431.
 
 
-[#issue-firewalld-cockpit]
-=== Cockpit service not known to `firewalld`
+[#issue-duplicate-ip-address]
+=== Pre-built images report two IP addresses on first boot
 
-`firewalld` does not know the Cockpit service.
-As a workaround, open the port in `firewalld` by typing this command:
-
-[source,shell]
-....
-firewall-cmd --zone=public --permanent --add-port=9090/tcp
-....
+When booting the pre-built images the first time, two IP addresses may be reported by the `ip a` command or other tools.
+This issue only happens on the first boot of the image, on the following boots only a single IP address is assigned to the network interface.
 
 
 [#issue-install-vnc]

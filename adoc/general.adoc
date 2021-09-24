@@ -26,13 +26,15 @@ The images have two things in common:
 * SELinux is not enabled by default
 * `firewalld` is not enabled by default
 
+To upgrade from the previous version, use the `transactional-update` command. Neither of the media is needed for that.
+
+
 [#general-cockpit]
 === Cockpit web-based node management system
 
 For web-based management of a single node, Cockpit is included.
 
 Cockpit is not enabled by default and its firewall port is not open if the firewall is enabled.
-For more information, see <<#issue-firewalld-cockpit>>.
 
 
 [#general-suma]
@@ -40,12 +42,13 @@ For more information, see <<#issue-firewalld-cockpit>>.
 
 {suma} can be used to manage {product} hosts.
 There are certain limitations:
-* Installing additional software or patching the system does not work with the Web UI because `transactional-update` needs to be used instead of `zypper`.
-As a workaround, you can execute remote commands and call `transactional-update` tool on the {product} host.
+
 * {product} host cannot be monitored with {suma}
-* {suma} does not provide integrated container management yet.
-As a workaround, you can use Salt via `cmd.run podman`.
-We intend to resolve these issues in the future maintenance updates of {suma}.
+* {suma} does not provide integrated container management yet. As a workaround, you can use Salt via `cmd.run podman`.
+* {suma} can manage the {product} hosts ony with the Salt stack; the traditional stack is not supported
+* Ansible control node cannot be instaled on {product}
+
+We intend to resolve these issues in the future maintenance updates of {product} on {suma}.
 
 
 [#general-selinux]
@@ -54,7 +57,7 @@ We intend to resolve these issues in the future maintenance updates of {suma}.
 {product} includes SELinux with base system policies.
 Before enabling SELinux, make sure to install the necessary policies for your workload.
 
-If you are running {product} as KVM virtualization host, the use of SELinux is strongly discouraged.
+If you are running {product} as KVM virtualization host, the use of SELinux is strongly discouraged and not supported.
 
 
 [#general-toolbox]
@@ -73,7 +76,17 @@ Then you can install additional software into the container.
 === Kernel Live Patching
 
 {product} now supports Kernel Live Patching.
-If your subscription includes it, you can either install it directly during the installation, or register the Live Patching module later using the `transactional update` command.
+If your subscription includes the Live Patching module, you can either install it directly during the installation, or register it using the `transactional-update` command.
+
+After enabling the Live Patching module, it is necessary to change the configuration of `libzypp` whether or not you want to apply live patches.
+In `/etc/zypp/zypp.conf` change the following variables:
+
+* `multiversion = provides:multiversion(kernel)` in order to keep the running kernel while patching the system; otherwise you may get dependency conflicts during applying updates
+* `multiversion.kernels = latest` in order to clean-up kernels in the new created snapshot after applying the live patch; otherwise the snapshot will keep the previous kernel during applying updates
+
+In order to enable live patching, additionally set `LIVEPATCH_KERNEL='always'` in `/etc/sysconfig/livepatching`.
+
+Note that kernel live patching is only available for the x86_64 and s390x architectures. It is also not available for the real-time kernel.
 
 [#general-sdo]
 === {sdo} (SDO)

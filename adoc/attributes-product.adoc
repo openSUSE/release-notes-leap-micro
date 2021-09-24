@@ -6,9 +6,9 @@
 
 :abstract: {product} is a modern operating system primarily targeted for edge computing. This document provides a high-level overview of features, capabilities, and limitations of {product} {this-version}.
 
-:doc-url: https://documentation.suse.com/sle-micro/5.0
+:doc-url: https://documentation.suse.com/sle-micro/5.1
 :doc-url-beta: https://susedoc.github.io/doc-sle/main
-:doc-url-source: https://www.suse.com/products/server/download/
+:doc-url-source: https://www.suse.com/download/sle-micro/
 
 :support-url: https://example.com/support
 :rn-url: https://www.suse.com/releasenotes
