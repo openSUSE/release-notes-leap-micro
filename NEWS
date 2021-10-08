@@ -1,3 +1,9 @@
+5.1.20211008 (tracked in bsc#933411)
+- Update live kernel patching note (bsc#1190815)
+- Updated note about lifecycle
+- Updated note about enabling Cockpit
+
+
 5.1.20210924 (tracked in bsc#933411)
 - Updated note about upgrading
 - Updated note about SUSE Manager
