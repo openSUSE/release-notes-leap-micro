@@ -36,6 +36,9 @@ For web-based management of a single node, Cockpit is included.
 
 Cockpit is not enabled by default and its firewall port is not open if the firewall is enabled.
 
+You can enable Cockpit via `systemctl enable --now cockpit.socket`.  
+Cockpit will then be available at `https://YOUR_IP_ADDRESS:9090`. 
+
 
 [#general-suma]
 === Managing {product} with {suma}
@@ -86,7 +89,9 @@ In `/etc/zypp/zypp.conf` change the following variables:
 
 In order to enable live patching, additionally set `LIVEPATCH_KERNEL='always'` in `/etc/sysconfig/livepatching`.
 
-Note that kernel live patching is only available for the x86_64 and s390x architectures. It is also not available for the real-time kernel.
+To make sure that the live patches are installed after kernel upgrade, make sure to install matching version of the `kernel-default-livepatch` package.
+
+Note that kernel live patching is only available for the x86-64 and s390x architectures. It is also not available for the real-time kernel.
 
 [#general-sdo]
 === {sdo} (SDO)
