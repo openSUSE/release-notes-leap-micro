@@ -32,12 +32,8 @@ To upgrade from the previous version, use the `transactional-update` command. Ne
 [#general-cockpit]
 === Cockpit web-based node management system
 
-For web-based management of a single node, Cockpit is included.
-
-Cockpit is not enabled by default and its firewall port is not open if the firewall is enabled.
-
-You can enable Cockpit via `systemctl enable --now cockpit.socket`.  
-Cockpit will then be available at `https://YOUR_IP_ADDRESS:9090`. 
+For web-based management of a single node, Cockpit is included. 
+For details, refer to {doc-url}/html/SLE-Micro-all/article-administration-slemicro.html#sec-admin-cockpit.
 
 
 [#general-suma]
@@ -68,10 +64,11 @@ If you are running {product} as KVM virtualization host, the use of SELinux is s
 
 {product} provides the `toolbox` container.
 However, it is not part of the media and needs to be downloaded from https://registry.suse.com.
-To download from the registry, the system needs network access.
+To download from the registry, the system needs network access. 
+For details refer to {doc-url}/html/SLE-Micro-all/article-administration-slemicro.html#sec-admin-toolbox.
 
 The `toolbox` container does not include or inherit a software repository setup from the underlying system.
-If the underlying system is registered properly, `zypper` will enable a basic set of repositories (`Basesystem` and `Server Applications` modules of {sles} 15{nbsp}SP2) when you execute it.
+If the underlying system is registered properly, `zypper` will enable a basic set of repositories (`Basesystem` and `Server Applications` modules of {sles} 15{nbsp}SP3) when you execute `zypper` inside the toolbox container.
 Then you can install additional software into the container.
 
 

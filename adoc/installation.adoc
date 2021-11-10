@@ -16,113 +16,15 @@ include::attributes-product.adoc[]
 [#install-yast]
 === Manually installing with YaST
 
-The installation workflow for manual installation is similar to {sles}.
-However, it is stripped down and configuration options are more limited.
-For more information, see the {sles} documentation.
+The installation workflow for manual installation is described in {doc-url}/html/SLE-Micro-all/part-manual-installation.html.
 
 
 [#install-autoyast]
 === Unattended installation with {autoyast}
 
-Installing {product} with {autoyast} works similarly to installing {slesa} with {autoyast}.
-The two main differences are:
+Installing {product} with {autoyast} is described in {doc-url}/html/SLE-Micro-all/book-autoyast.html.
 
-* There is limited set of options that can be configured via the {autoyast} profile.
-* There is no second stage of the {autoyast} workflow.
-
-For more information, see the {product} and {sles} documentation.
-
-The following example shows an {autoyast} profile:
-
-[source,xml]
-....
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE profile>
-<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
-  <suse_register>
-    <do_registration config:type="boolean">true</do_registration>
-    <reg_code>YOUR_REGISTRATION_CODE</reg_code>
-    <install_updates config:type="boolean">true</install_updates>
-    <reg_server>http://YOUR_SMT_SERVER</reg_server>
-  </suse_register>
-  <bootloader>
-    <global>
-      <timeout config:type="integer">-1</timeout>
-      <hiddenmenu>false</hiddenmenu>
-    </global>
-  </bootloader>
-  <general>
-    <mode>
-      <confirm config:type="boolean">false</confirm>
-      <second_stage config:type="boolean">false</second_stage>
-    </mode>
-  </general>
-  <software>
-    <products config:type="list">
-      <product>SUSE-MicroOS</product>
-    </products>
-    <install_recommended config:type="boolean">true</install_recommended>
-    <packages config:type="list">
-      <package>grub2</package>
-    </packages>
-    <patterns config:type="list">
-      <pattern>basesystem</pattern>
-      <pattern>microos-container_runtime</pattern>
-      <pattern>microos-selinux</pattern>
-    </patterns>
-  </software>
-  <users config:type="list">
-    <user>
-      <encrypted config:type="boolean">false</encrypted>
-      <user_password>ROOT_PASSWORD</user_password>
-      <username>root</username>
-    </user>
-  </users>
-</profile>
-....
-
-{autoyast} only supports a limited set of sections compared to {sles}:
-
-* `add-on`
-* `bootloader`
-* `configuration_management`
-* `fcoe-client`
-* `groups`
-* `general`
-* `iscsi-client`
-* `kdump`
-* `keyboard`
-* `language`
-* `login_settings`
-* `networking`
-* `partitioning`
-* `partitioning_advanced`
-* `report`
-* `runlevel` / `services-manager`
-* `scripts` (`pre-scripts`, `postpartitioning-scripts`, `chroot-scripts`)
-* `security`
-* `software`
-* `ssh_import`
-* `suse_register`
-* `timezone`
-* `users`
-* `user_defaults`
-
-[NOTE]
-.Explicitly disable the second stage
-====
-{autoyast} can set some options in either the first or the second stage.
-{product} does not include a second stage.
-For some settings (such as networking) to be applied during the first stage, you need to explicitly disable the second stage:
-
-[source,xml]
-....
-<second_stage config:type="boolean">false</second_stage>
-....
-
-The example profile above already includes this line.
-====
-
+ 
 [#install-yomi]
 === Unattended installation with Yomi (technology preview)
 
@@ -136,49 +38,11 @@ Installation with Yomi is a technology preview.
 {product} is provided as raw images which can be deployed directly to a storage device, for example, a memory card, a USB stick, or a hard drive.
 {product} is also provided as images for specific hardware device with a customized software selection.
 
-To deploy an image, first identify and download the image you need.
-Then decompress it and write it to a storage device:
-
-[source,bash]
-....
-xz -d <downloaded_image.raw.xz>
-dd if=<downloaded_image.raw> of=/dev/sdX
-....
-
-When the image is first booted, use Ignition or Combustion for initial configuration.
-Make sure to set a root password or there will be no way to access the system after deployment.
-
-Ignition or Combustion are invoked only the first time the image boots.
-To invoke them at a later reboot, append `ignition.firstboot` to the kernel command line.
-
-Ignition configuration files should be named `ignition/config.ign`, and can be stored on a USB stick.
-A minimal Ignition configuration file could look like this:
-
-[source,json]
-....
-{
-  "ignition":{
-    "version":"3.1.0"
-  },
-  "passwd":{
-    "users":[
-      {
-        "name":"root",
-        "passwordHash":"hash, created with, for example, `openssl passwd -6`"
-      }
-    ]
-  }
-}
-....
-
-For more information about Ignition and Combustion, including further examples, see:
-
-* https://en.opensuse.org/Portal:MicroOS/Ignition
-* https://en.opensuse.org/Portal:MicroOS/Combustion
+For a procedure of deploying an image refer to {doc-url}/html/SLE-Micro-all/part-raw-image.html 
 
 [#upgrade]
 === Upgrade from previous version
 
 Upgrade from {producta} {previous-version} is only possible via the `transactional-update` tool.
-In order to upgrade a registered system, use the `transactional-update migration` command from running system.
-If your system is not registered, update the configured repositories and use `transactional-update dup` command.
+For the upgrade procedure, refer to {doc-url}/html/SLE-Micro-all/book-upgrade.html.
+
