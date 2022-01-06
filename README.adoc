@@ -1,10 +1,10 @@
-== SUSE Linux Enterprise Micro 5.0 (SLE Micro 5.0) Release Notes
+== SUSE Linux Enterprise Micro 5.2 (SLE Micro 5.2) Release Notes
 
 == How to contribute
 
 For a comprehensive overview, see https://confluence.suse.com/display/documentation/Contributing+to+release+notes.
 
-1. Create a new branch with name that includes: your username, the original branch name, and descriptive suffix (e.g. `lkucharczyk-15_SP3-newfeature`).
+1. Create a new branch with name that includes: your username, the original branch name, and descriptive suffix (e.g. `lkucharczyk-5_2-newfeature`).
 2. Submit the changes as merge request.
 3. Write one sentence per line.
 4. Include Jira or Bugzilla identifiers either in comment (`//jsc-SLE-1234`) or in the section ID (`[#jsc-SLE-1234]`).
