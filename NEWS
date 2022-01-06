@@ -1,3 +1,7 @@
+5.2.20220106 (tracked in bsc#933411)
+- Initial update for 5.2 
+
+
 5.1.20211008 (tracked in bsc#933411)
 - Update live kernel patching note (bsc#1190815)
 - Updated note about lifecycle
