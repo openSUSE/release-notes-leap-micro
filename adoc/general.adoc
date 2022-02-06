@@ -35,6 +35,8 @@ To upgrade from the previous version, use the `transactional-update` command. Ne
 For web-based management of a single node, Cockpit is included. 
 For details, refer to {doc-url}/html/SLE-Micro-all/article-administration-slemicro.html#sec-admin-cockpit.
 
+Compared to the previous release, Cockpit has been updated to the latest version.
+Due to limited functionality, the Dashboard screen has been removed with this release.
 
 [#general-suma]
 === Managing {product} with {suma}
@@ -95,6 +97,7 @@ Note that kernel live patching is only available for the x86-64 and s390x archit
 
 {product} includes needed packages for {sdo}.
 {sdo} helps onboard any device to any device management system.
+With this release, the SDO client has been replaced with FDO client, which is a portable implementation of the FIDO Device Onboard Spec.
 The packages are only provided as a technology preview and do not offer full support.
 Using {sdo} needs proper integration into your target environment and only works on supported hardware.
 
@@ -106,3 +109,11 @@ Using {sdo} needs proper integration into your target environment and only works
 Even if this directory still exists, it is empty on purpose.
 systemd unit files should be used instead of initscripts.
 To start system services or to configure their status on boot, use the `systemctl` command instead.
+
+
+[#pattern-rename]
+=== Rename of the `microos-sssd_ldap` pattern
+
+The `microos_sssd_ldap` pattern has been renamed to `microos-sssd_ldap` (the first dash has been replaced with an underscore).
+This new name is consistent with other pattern names.
+Note that your AutoYaST profile may need updating.
