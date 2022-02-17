@@ -1,4 +1,3 @@
-
 include::attributes-generic.adoc[]
 include::attributes-product.adoc[]
 
@@ -77,18 +76,7 @@ Then you can install additional software into the container.
 [#general-livepatch]
 === Kernel Live Patching
 
-{product} now supports Kernel Live Patching.
-If your subscription includes the Live Patching module, you can either install it directly during the installation, or register it using the `transactional-update` command.
-
-After enabling the Live Patching module, it is necessary to change the configuration of `libzypp` whether or not you want to apply live patches.
-In `/etc/zypp/zypp.conf` change the following variables:
-
-* `multiversion = provides:multiversion(kernel)` in order to keep the running kernel while patching the system; otherwise you may get dependency conflicts during applying updates
-* `multiversion.kernels = latest` in order to clean-up kernels in the new created snapshot after applying the live patch; otherwise the snapshot will keep the previous kernel during applying updates
-
-In order to enable live patching, additionally set `LIVEPATCH_KERNEL='always'` in `/etc/sysconfig/livepatching`.
-
-To make sure that the live patches are installed after kernel upgrade, make sure to install matching version of the `kernel-default-livepatch` package.
+{product} supports Kernel Live Patching, for details refer to {doc-url}/html/SLE-Micro-all/cha-images-procedure.html#sec-slemicro-live-patching.
 
 Note that kernel live patching is only available for the x86-64 and s390x architectures. It is also not available for the real-time kernel.
 
