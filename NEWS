@@ -1,3 +1,8 @@
+5.2.20220325 (tracked in bsc#933411)
+- Added known issue about AppArmor
+- Added note about SELinux permissive mode by default
+
+
 5.2.20220321 (tracked in bsc#933411)
 - Add link to SLE Micro docs, de-duplicate information
 
