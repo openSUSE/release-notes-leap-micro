@@ -59,6 +59,8 @@ Before enabling SELinux, make sure to install the necessary policies for your wo
 
 If you are running {product} as KVM virtualization host, the use of SELinux is strongly discouraged and not supported.
 
+Note that the pre-built images enable SELinux by default in the permissive mode.
+
 
 [#general-toolbox]
 === `toolbox` container
