@@ -1,17 +1,17 @@
-:product: {sle} Micro
-:producta: SLE Micro
+:product: openSUSE Leap Micro
+:producta: Leap Micro
 :previous-version: 5.1
 :this-version: 5.2
 :rel-date: June 2022
 
 :abstract: {product} is a modern operating system primarily targeted for edge computing. This document provides a high-level overview of features, capabilities, and limitations of {product} {this-version}.
 
-:doc-url: https://documentation.suse.com/sle-micro/5.2
-:doc-url-beta: https://susedoc.github.io/doc-sle/main
-:doc-url-source: https://www.suse.com/download/sle-micro/
+:doc-url: https://en.opensuse.org/Portal:LeapMicro
+:doc-url-beta: https://en.opensuse.org/Portal:LeapMicro
+:doc-url-source: https://en.opensuse.org/Portal:LeapMicro
 
-:support-url: https://example.com/support
-:rn-url: https://www.suse.com/releasenotes
+:support-url: https://en.opensuse.org/openSUSE:Submitting_bug_reports
+:rn-url: https://doc.opensuse.org
 
 // conditionals-begin
 // lifecycle: beta|maintained|unmaintained
