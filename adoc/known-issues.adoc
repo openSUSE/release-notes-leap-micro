@@ -47,6 +47,6 @@ You can safely ignore this warning.
 [#issue-update-apparmor]
 === AppArmor error messages in log after upgrade
 
-SLE Micro supports SELinux as the security framework, however, some AppArmor packages are still included because of package dependencies.
-Since they have been reduced since SLE Micro 5.1, it may happen that there are error messages showing in the system journal after upgrade.
+{producta} supports SELinux as the security framework, however, some AppArmor packages are still included because of package dependencies.
+Since they have been reduced since {producta} 5.1, it may happen that there are error messages showing in the system journal after upgrade.
 If this happens, make sure that the `apparmor.service` service is not enabled in your system.

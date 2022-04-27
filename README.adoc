@@ -1,4 +1,4 @@
-== SUSE Linux Enterprise Micro 5.2 (SLE Micro 5.2) Release Notes
+== openSUSE Leap Micro 5.2 (Leap Micro 5.2) Release Notes
 
 == How to contribute
 
