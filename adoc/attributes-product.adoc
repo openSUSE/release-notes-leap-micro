@@ -1,8 +1,8 @@
 :product: {opensuse} Leap Micro
 :producta: Leap Micro
-:previous-version: 5.1
-:this-version: 5.2
-:rel-date: June 2022
+:previous-version: 5.2
+:this-version: 5.3
+:rel-date: TBD
 
 :abstract: {product} is a modern operating system primarily targeted for edge computing. This document provides a high-level overview of features, capabilities, and limitations of {product} {this-version}.
 
