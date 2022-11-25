@@ -1,4 +1,10 @@
-== openSUSE Leap Micro 5.2 (Leap Micro 5.2) Release Notes
+== openSUSE Leap Micro Release Notes
+
+This is the repository for the openSUSE Leap Micro release notes.
+
+If you are looking for an online version of the release notes, see https://doc.opensuse.org/release-notes/x86_64/openSUSE/LeapMicro/.
+
+To learn how to contribute, read on...
 
 == How to contribute
 
